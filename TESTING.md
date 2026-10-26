@@ -41,3 +41,9 @@ Skills update, 2026-10-26: Added owner-provided strengths and workshop equipment
 T02 browser navigation, T06 phone/laptop rendering, T08 keyboard, T12 console/direct-file/Live Preview, T13 Lighthouse, and T14 live-site checks for this update: Not run. Browser automation inventory exposed no connected browser session; native Edge windows are present, but native UI tests were not executed. No viewport, keyboard, console, or Lighthouse results are claimed. Contact and the planned interactive features are still unbuilt. Skills changes await review and push approval.
 
 Verification correction: The initial diff check flagged an extra blank line at the end of README.md. Removed that line and the unintended UTF-8 BOM; the final diff check passed. The earlier whitespace Pass statement refers to the corrected result.
+
+Contact update, 2026-10-26: Added contact.html with the owner-approved text exactly as requested: joelramirez9000[at][gmale][dot][com]. It is plain text; no mailto destination was inferred. Added Contact navigation to the other four pages and a wrapping rule for narrow screens.
+
+Static checks: Pass on all five pages for one h1, one current-page indicator, all five navigation destinations, and existing local assets/links. Exact contact text check and git diff whitespace check passed. Existing text/background colors are reused.
+
+T02 browser navigation, T07 phone/laptop layout, T08 keyboard, T12 console/direct-file/Live Preview, T13 Lighthouse, and T14 full live-site tests for this update: Not run. Browser checks were not executed; no rendering or measured Lighthouse results are claimed. Contact is not yet pushed. Earlier HTTP verification on 2026-10-26 confirmed Home and Skills returned 200 and GitHub's latest Pages deployment succeeded; this was an HTTP check, not a browser test.

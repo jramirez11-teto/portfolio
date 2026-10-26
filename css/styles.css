@@ -43,6 +43,7 @@ h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
 .interests ul { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin: 0; padding-left: 1.25rem; color: var(--secondary); }
 .site-footer { border-top: 1px solid #cbd5e1; color: var(--secondary); font-size: 0.9rem; padding-block: 1rem; }
 .skill-section { margin-top: 2rem; }
+.contact-email { overflow-wrap: anywhere; }
 
 .projects-page { padding-block: 3rem; }
 .project-grid { display: grid; gap: 2rem; margin-top: 2.5rem; }
