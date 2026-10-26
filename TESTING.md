@@ -60,3 +60,15 @@ JavaScript update, 2026-10-26: Implemented mobile navigation below 48rem and pro
 Git diff whitespace check: Pass. New button text colors reuse combinations measured in T15: green/white, green/pale green, white/green and white/darker green; underlined bold text distinguishes selected filters beyond color.
 
 T02, T03-T08, T09-T10 browser execution, T12 direct-file/Live Preview console, T13 Lighthouse and T14 live-site checks for this update: Not run. Actual phone/laptop rendering, Tab/Shift+Tab/Enter/Space/Escape operation, no-JavaScript rendering, and browser console behavior remain unverified. Browser automation inventory previously had no connected session; native UI checks were not executed. No measured Lighthouse scores are claimed. Push awaits owner review and approval.
+
+Theme update, 2026-10-26: Added a Dark mode toggle to every page, available independently of the mobile menu. Device preference is the default; explicit choices use localStorage with guarded reads/writes. No JavaScript leaves the original light theme.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| T20 | Theme logic | Execute shared script in Node VM mock DOM with light/dark device settings, saved/invalid preferences, toggle twice, and blocked storage. | Correct initial palette, accurate pressed state, user choice retained after system change, no storage exceptions. | Pass, 2026-10-26, Node VM mock DOM; not browser testing. |
+| T21 | Dark contrast | Calculate WCAG relative luminance for dark text, secondary text, links, hover, highlights and selected filters. | Text >=4.5:1; focus >=3:1. | Pass, 2026-10-26: text/background 17.06, text/surface 13.98, secondary/background 12.02, secondary/highlight 9.24, green/surface 10.42, green/background 12.71, green/highlight 9.77, hover/highlight 11.32, selected text/green 12.71, selected text/hover 14.73. |
+| T22 | Theme browser behavior | At 390x844 and 1440x900 on all pages, toggle using click/Enter/Space, navigate/reload, change system preference, test blocked storage and direct-file opening. | Readable layout, visible focus, preference retained when supported, working menu and filters in both themes. | Not run; browser, keyboard, storage persistence across actual pages, console and Lighthouse remain unverified. |
+
+Static and whitespace checks are recorded below after execution. Full live-site testing remains outstanding. No measured Lighthouse scores are claimed.
+
+Theme static verification: Pass, all five pages have exactly one theme control and one h1. Git diff whitespace check passed.

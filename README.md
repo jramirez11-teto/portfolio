@@ -12,4 +12,6 @@ The Home page introduces Joel and his interests using a restrained green palette
 
 JavaScript adds a mobile Menu button below 48rem, with Escape to close and navigation that adjusts on resize. The Projects page has All projects, Individual work, and Team work filters. Without JavaScript, navigation and all project cards remain visible. These features use the shared deferred script without dependencies.
 
+Every page also has a Dark mode toggle for phone and desktop. It follows the device preference until a visitor chooses a theme, then saves that choice in browser storage when available. If storage is blocked, the toggle works for the current page. Without JavaScript, the site uses its light palette.
+
 The Home and Skills URLs responded successfully on 2026-10-26 at [the live site](https://jramirez11-teto.github.io/portfolio/). The interactive features have not yet been deployed. Full live browser testing remains outstanding; see `TESTING.md`.

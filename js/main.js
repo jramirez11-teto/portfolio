@@ -1,3 +1,40 @@
+const themeButton = document.querySelector('.theme-toggle');
+
+if (themeButton) {
+  const deviceTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  let savedTheme = null;
+
+  // Storage may be blocked, including in some direct-file browser sessions.
+  try {
+    savedTheme = localStorage.getItem('portfolio-theme');
+  } catch {
+    savedTheme = null;
+  }
+  if (savedTheme !== 'light' && savedTheme !== 'dark') savedTheme = null;
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
+  }
+
+  applyTheme(savedTheme || (deviceTheme.matches ? 'dark' : 'light'));
+  themeButton.hidden = false;
+
+  themeButton.addEventListener('click', () => {
+    savedTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(savedTheme);
+    try {
+      localStorage.setItem('portfolio-theme', savedTheme);
+    } catch {
+      // The toggle still works for this page when storage is unavailable.
+    }
+  });
+
+  deviceTheme.addEventListener('change', () => {
+    if (!savedTheme) applyTheme(deviceTheme.matches ? 'dark' : 'light');
+  });
+}
+
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-navigation');
 
