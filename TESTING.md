@@ -72,3 +72,5 @@ Theme update, 2026-10-26: Added a Dark mode toggle to every page, available inde
 Static and whitespace checks are recorded below after execution. Full live-site testing remains outstanding. No measured Lighthouse scores are claimed.
 
 Theme static verification: Pass, all five pages have exactly one theme control and one h1. Git diff whitespace check passed.
+
+Home-only theme revision, 2026-10-26: Owner requested one theme button on Home with the saved choice applied across all pages. Moved theme initialization outside the button guard. Node VM mock DOM checks: Pass for dark/light selection on Home, shared choice on all four button-free pages, and blocked storage. Actual browser navigation/persistence, phone/laptop, keyboard, console and Lighthouse checks remain Not run. Previous all-page button expectations in T22 are superseded: test the control on Home and the resulting theme on every page.
