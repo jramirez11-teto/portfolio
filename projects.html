@@ -13,7 +13,8 @@
   <header class="site-header">
     <div class="container header-content">
       <a class="site-name" href="index.html">Joel Ramirez</a>
-      <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden>Menu</button>
+      <nav id="main-navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html" aria-current="page">Projects</a>
@@ -26,8 +27,14 @@
   <main id="main-content" class="container projects-page" tabindex="-1">
     <h1>Projects</h1>
     <p class="intro-text">My passion for creating and designing through robotics inspired me to study Mechanical Engineering Technology at NJIT. These projects highlight my individual design work and my contributions to a team.</p>
+    <div class="project-filters" role="group" aria-label="Filter projects by contribution" hidden>
+      <button type="button" data-filter="all" aria-pressed="true">All projects</button>
+      <button type="button" data-filter="individual" aria-pressed="false">Individual work</button>
+      <button type="button" data-filter="team" aria-pressed="false">Team work</button>
+    </div>
+    <p id="filter-status" role="status"></p>
     <div class="project-grid">
-      <article class="project-card" aria-labelledby="over-under-heading">
+      <article class="project-card" data-category="individual" aria-labelledby="over-under-heading">
         <img src="images/over-under-robot.jpeg" width="738" height="417" alt="My Over Under robot on a worktable, with a front kicker and four angled-wheel assemblies.">
         <div class="project-content">
           <h2 id="over-under-heading">Over Under robot</h2>
@@ -36,7 +43,7 @@
           <p>Although it was never used in the competition itself, the robot was repurposed for in-house competitions during elementary school visits and for scrimmages with future competition robots.</p>
         </div>
       </article>
-      <article class="project-card" aria-labelledby="high-stakes-heading">
+      <article class="project-card" data-category="team" aria-labelledby="high-stakes-heading">
         <img src="images/high-stakes-robot.jpeg" width="1080" height="1031" alt="The High Stakes team robot on the field, with a red ring in its mechanism and mobile goals nearby.">
         <div class="project-content">
           <h2 id="high-stakes-heading">High Stakes intake mechanism</h2>

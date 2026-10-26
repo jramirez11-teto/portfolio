@@ -47,3 +47,16 @@ Contact update, 2026-10-26: Added contact.html with the owner-approved text exac
 Static checks: Pass on all five pages for one h1, one current-page indicator, all five navigation destinations, and existing local assets/links. Exact contact text check and git diff whitespace check passed. Existing text/background colors are reused.
 
 T02 browser navigation, T07 phone/laptop layout, T08 keyboard, T12 console/direct-file/Live Preview, T13 Lighthouse, and T14 full live-site tests for this update: Not run. Browser checks were not executed; no rendering or measured Lighthouse results are claimed. Contact is not yet pushed. Earlier HTTP verification on 2026-10-26 confirmed Home and Skills returned 200 and GitHub's latest Pages deployment succeeded; this was an HTTP check, not a browser test.
+
+JavaScript update, 2026-10-26: Implemented mobile navigation below 48rem and project contribution filters. Native buttons support Enter/Space; Escape closes the menu and restores focus. Resize resets navigation for the new layout. The hidden attribute removes closed links and filtered cards from display/tab order. Controls start hidden until JavaScript initializes; all navigation and project content remain visible without JavaScript.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| T16 | Menu state logic | Execute main.js in Node VM with mock DOM; click menu, send Escape, change media query in both directions with focus in navigation. | Accurate expanded/hidden state; focus restored; desktop navigation visible. | Pass, 2026-10-26, Node VM mock DOM. Not a browser/keyboard test. |
+| T17 | Filter state logic | Execute script with mock project cards; choose Individual, Team, then All. | Matching cards visible, one selected button, accurate status count. | Pass, 2026-10-26, Node VM mock DOM. |
+| T18 | Page-specific guards | Execute script without project filters and with no matching elements. | No exceptions. | Pass, 2026-10-26, Node VM mock DOM. |
+| T19 | Shared markup | Check all HTML files for one h1, one navigation target, matching menu controls, deferred script, and existing local targets. | All five pages pass. | Pass, 2026-10-26, PowerShell source checks. |
+
+Git diff whitespace check: Pass. New button text colors reuse combinations measured in T15: green/white, green/pale green, white/green and white/darker green; underlined bold text distinguishes selected filters beyond color.
+
+T02, T03-T08, T09-T10 browser execution, T12 direct-file/Live Preview console, T13 Lighthouse and T14 live-site checks for this update: Not run. Actual phone/laptop rendering, Tab/Shift+Tab/Enter/Space/Escape operation, no-JavaScript rendering, and browser console behavior remain unverified. Browser automation inventory previously had no connected session; native UI checks were not executed. No measured Lighthouse scores are claimed. Push awaits owner review and approval.

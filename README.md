@@ -8,6 +8,8 @@ Double-click `index.html` to open the Home page in a browser. No installation or
 
 ## Progress
 
-The Home page introduces Joel and his interests using a restrained green palette. The About Me page covers his education and interests. The Projects page presents his Over Under robot and High Stakes intake mechanism with owner-provided photos. The Skills page covers teamwork, hands-on problem solving, and workshop tools. Contact displays the owner's approved email text exactly as supplied. All five pages share navigation and styling. A third project and the planned interactive features are still needed for the assignment.
+The Home page introduces Joel and his interests using a restrained green palette. The About Me page covers his education and interests. The Projects page presents his Over Under robot and High Stakes intake mechanism with owner-provided photos. The Skills page covers teamwork, hands-on problem solving, and workshop tools. Contact displays the owner's approved email text exactly as supplied. All five pages share navigation and styling. A third project is still needed for the assignment.
 
-The Home and Skills URLs responded successfully on 2026-10-26 at [the live site](https://jramirez11-teto.github.io/portfolio/). The latest Contact changes have not been deployed. Full live browser testing remains outstanding; see `TESTING.md`.
+JavaScript adds a mobile Menu button below 48rem, with Escape to close and navigation that adjusts on resize. The Projects page has All projects, Individual work, and Team work filters. Without JavaScript, navigation and all project cards remain visible. These features use the shared deferred script without dependencies.
+
+The Home and Skills URLs responded successfully on 2026-10-26 at [the live site](https://jramirez11-teto.github.io/portfolio/). The interactive features have not yet been deployed. Full live browser testing remains outstanding; see `TESTING.md`.

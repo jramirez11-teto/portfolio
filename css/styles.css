@@ -10,6 +10,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -44,6 +45,14 @@ h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
 .site-footer { border-top: 1px solid #cbd5e1; color: var(--secondary); font-size: 0.9rem; padding-block: 1rem; }
 .skill-section { margin-top: 2rem; }
 .contact-email { overflow-wrap: anywhere; }
+button { font: inherit; cursor: pointer; padding: 0.5rem 1rem; color: var(--green); background: var(--surface); border: 2px solid var(--green); border-radius: 0.35rem; }
+button:hover { color: var(--green-hover); border-color: var(--green-hover); background: var(--green-light); }
+.project-filters { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.project-filters button[aria-pressed="true"] { color: var(--surface); background: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; }
+.project-filters button[aria-pressed="true"]:hover { background: var(--green-hover); }
+@media (max-width: 47.999rem) {
+  #main-navigation { flex-basis: 100%; flex-direction: column; }
+}
 
 .projects-page { padding-block: 3rem; }
 .project-grid { display: grid; gap: 2rem; margin-top: 2.5rem; }
