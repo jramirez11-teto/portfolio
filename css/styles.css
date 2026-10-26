@@ -42,3 +42,14 @@ h1 { font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.15; letter-spacing: -0
 h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
 .interests ul { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin: 0; padding-left: 1.25rem; color: var(--secondary); }
 .site-footer { border-top: 1px solid #cbd5e1; color: var(--secondary); font-size: 0.9rem; padding-block: 1rem; }
+
+.projects-page { padding-block: 3rem; }
+.project-grid { display: grid; gap: 2rem; margin-top: 2.5rem; }
+.project-card { min-width: 0; background: var(--surface); border: 1px solid #cbd5e1; border-radius: 0.5rem; overflow: hidden; }
+.project-card img { display: block; width: 100%; height: auto; }
+.project-content { padding: 1.5rem; }
+.project-content h2 { font-size: 1.4rem; }
+.project-content p:last-child { margin-bottom: 0; }
+@media (min-width: 48rem) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+}

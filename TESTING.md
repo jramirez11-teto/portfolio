@@ -29,3 +29,9 @@ Static checks on 2026-10-19: Pass — exactly one h1 and all local link/asset ta
 About Me update, 2026-10-19: About Me now contains owner-provided education and interests. Home and About Me link to each other; three pages remain unbuilt. Browser viewport, direct-file, keyboard, console, Live Preview, live-site, and Lighthouse checks remain Not run for this update. Earlier results above describe the Home-only version.
 
 Static checks for this update: Pass on both HTML pages for exactly one h1, exactly one current-page indicator, and existing local link and asset targets. Git diff whitespace check passed. These source checks do not verify rendered layout or browser behavior.
+
+Projects update, 2026-10-26: Added the two owner-provided robotics projects and photos; all three existing pages link to Projects. One more owner-provided project is needed to meet the three-project requirement. Skills and Contact remain unbuilt; the mobile menu and project filter remain unimplemented.
+
+Static verification: Pass on Home, About Me, and Projects for exactly one h1, one current-page indicator, and existing local link/script/style/image targets. Both project images are under 500 KB (80,495 and 146,169 bytes). Git diff whitespace check passed. No new text/background color combinations were introduced.
+
+T02, T05, T08, T11, T12, T13, and T14 for this update: Not run in a browser. Direct-file rendering, phone/laptop viewports, keyboard, console, VS Code Live Preview, Lighthouse, and live-site checks remain unverified. No measured Lighthouse scores are claimed. Live testing awaits approved push and verified deployment. Static checks above do not establish rendered layout or accessibility behavior.
