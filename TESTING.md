@@ -34,7 +34,7 @@ Live availability checked on 2026-10-29 using PowerShell HTTP requests: all five
 | L20 | No JavaScript and unavailable storage | Disable JavaScript in DevTools and reload each page; restore it afterward. Separately test where browser storage is unavailable if possible. | Without JS all navigation and both projects remain available in light mode; controls needing JS hidden. Blocked storage does not break the current-page toggle or other features. | Not run |
 | L21 | Images, alt text, and public content | On live Projects inspect both photos and their alt attributes in DevTools; check transferred image sizes in Network. Review project and contact links if present. | Both images load, have descriptive alt, and are each below 500 KB. No project destination or mailto link is invented; current projects have no external links and Contact is plain text. | Not run |
 | L22 | Console and assets | Open each live page with DevTools Console and Network; reload and exercise menu, theme, and filters. | No site JavaScript exceptions or failed local asset requests. | Not run |
-| L23 | Home Lighthouse | On live index.html run DevTools Lighthouse Navigation, Accessibility and Best Practices, Mobile then Desktop, in both themes. Save reports and record each score. | Accessibility at least 90 in every run; review Best Practices findings. | Not run - no measured scores |
+| L23 | Home Lighthouse | On live index.html run DevTools Lighthouse Navigation, Accessibility and Best Practices, Mobile then Desktop, in both themes. Save reports and record each score. | Accessibility at least 90 in every run; review Best Practices findings. | Pass for owner-run PageSpeed Insights Mobile and Desktop, 2026-10-29: Accessibility 100 and Best Practices 100 on both; screenshots supplied. DevTools runs and separate theme coverage remain Not run. |
 | L24 | About Lighthouse | Repeat L23 on live about.html. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
 | L25 | Projects Lighthouse | Repeat L23 on live projects.html with All projects selected. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
 | L26 | Skills Lighthouse | Repeat L23 on live skills.html. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
@@ -43,10 +43,14 @@ Live availability checked on 2026-10-29 using PowerShell HTTP requests: all five
 
 ### Execution and retest log
 
-Append one row per executed test/configuration, including separate Lighthouse scores for each page, viewport, and theme. Keep failed rows when adding retests. The table below is intentionally empty until browser testing is executed.
+Append one row per executed test/configuration, including separate Lighthouse scores for each page, viewport, and theme. Keep failed rows when adding retests. Owner-supplied screenshots document the PageSpeed Insights runs below; these were not executed by Codex or in Chrome DevTools. Exact emulated viewport, browser/Lighthouse versions, and audited site theme are not visible in the screenshots.
 
 | Date | Test ID | Full URL | Chrome version | Viewport / theme | Pass or Fail | Evidence / scores / issue and fix | Retest reference |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10-29, 2:39:10 PM (report display) | L23 | https://jramirez11-teto.github.io/portfolio/index.html | Not recorded; PageSpeed Insights | Mobile preset; exact viewport/theme not recorded | Pass | Performance 100; Accessibility 100; Best Practices 100; SEO 100. Owner screenshot: Screenshot 2026-10-29 144006.png, supplied in chat. | Initial recorded run |
+| 2026-10-29, 2:39:35 PM (report display) | L23 | https://jramirez11-teto.github.io/portfolio/index.html | Not recorded; PageSpeed Insights | Desktop preset; exact viewport/theme not recorded | Pass | Performance 100; Accessibility 100; Best Practices 100; SEO 100. Owner screenshot: Screenshot 2026-10-29 143956.png, supplied in chat. | Initial recorded run |
+
+These results cover Home only. About, Projects, Skills, and Contact Lighthouse tests (L24-L27), manual keyboard checks, and the remaining live browser tests are still Not run. The screenshots support the recorded scores but do not establish manual accessibility results or both-theme coverage. Screenshot files have not been added to the repository.
 
 ## Historical test plans and verification
 
