@@ -1,5 +1,57 @@
 # Portfolio testing
 
+## Current live-site test plan - 2026-10-29
+
+Target: https://jramirez11-teto.github.io/portfolio/
+
+Use Chrome at 390 x 844 (phone) and 1440 x 900 (laptop). Run the tests below on the live URLs, in both light and dark themes where applicable. Select the theme on Home, then visit the other pages. Also repeat relevant checks by opening index.html directly and through VS Code Live Preview when available; keep those results separate from live results.
+
+For every browser run, record the date, full URL, Chrome version (from Help > About Google Chrome), viewport, theme, and result. Replace Not run with Pass or Fail only after executing the steps. For a failure, keep the original result, describe the fix, and append a dated retest result. No contact form exists, so valid/invalid form validation is not applicable. Contact currently displays approved plain text rather than a clickable email link.
+
+Live availability checked on 2026-10-29 using PowerShell HTTP requests: all five pages returned 200. This checks availability only. Browser execution is still outstanding: the previous Computer Use attempt stopped because it could not reliably determine Chrome's URL. No keyboard, rendering, console, or Lighthouse result is inferred from HTTP responses or source inspection.
+
+| ID | What is tested | Steps on the live site | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| L01 | Live availability | Request index.html, about.html, projects.html, skills.html, and contact.html under the target URL. | All five return HTTP 200. | Pass - 2026-10-29, PowerShell Invoke-WebRequest; all five returned 200. Browser not used. |
+| L02 | Home navigation | From index.html, activate Joel Ramirez and each of Home, About Me, Projects, Skills, Contact; return Home after each. | Each opens the correct live page; Home has the current-page indicator. | Not run |
+| L03 | About navigation | From about.html, activate Joel Ramirez and all five navigation links; return after each. | Correct destinations; About Me is indicated as current. | Not run |
+| L04 | Projects navigation | From projects.html, activate Joel Ramirez and all five navigation links; return after each. | Correct destinations; Projects is indicated as current. | Not run |
+| L05 | Skills navigation | From skills.html, activate Joel Ramirez, all five navigation links, and the Projects page link in the content; return after each. | Correct destinations; Skills is indicated as current. | Not run |
+| L06 | Contact navigation | From contact.html, activate Joel Ramirez and all five navigation links; return after each. Inspect every page footer for any additional links and test any present. | Correct destinations; Contact is indicated as current. Current footers contain no links. | Not run |
+| L07 | Home responsive layout | Open index.html at both specified sizes in both themes. | Readable content; no horizontal overflow; theme control fits. | Not run |
+| L08 | About responsive layout | Open about.html at both sizes in both themes. | Text and interest list fit without horizontal scrolling. | Not run |
+| L09 | Projects responsive layout | Open projects.html at both sizes in both themes. | Cards, filters, and photos fit; photos retain proportions; no horizontal scrolling. | Not run |
+| L10 | Skills responsive layout | Open skills.html at both sizes in both themes. | Headings, lists, and content fit without horizontal scrolling. | Not run |
+| L11 | Contact responsive layout | Open contact.html at both sizes in both themes. | Email text wraps when needed; no horizontal scrolling. | Not run |
+| L12 | Home keyboard | At both sizes, use Tab and Shift+Tab through Home; Enter on the skip link and every navigation link; Enter and Space on theme control. | Visible focus, logical order, skip reaches main, links work, theme toggles. | Not run |
+| L13 | About keyboard | At both sizes, use Tab/Shift+Tab, Enter on skip link and every navigation link. | Visible focus, logical order, skip reaches main, links work. | Not run |
+| L14 | Projects keyboard | At both sizes, use Tab/Shift+Tab, Enter on skip and navigation links; Enter/Space on every filter. | Visible focus; correct destinations; all filters usable without a mouse. | Not run |
+| L15 | Skills keyboard | At both sizes, use Tab/Shift+Tab and Enter on skip, navigation, and content links. | Visible focus; skip reaches main; all links work. | Not run |
+| L16 | Contact keyboard | At both sizes, use Tab/Shift+Tab and Enter on skip and navigation links. | Visible focus; skip reaches main; all links work; plain email text is not a tab stop. | Not run |
+| L17 | Mobile menu | On each page at phone width, open/close with click, Enter, and Space; Tab through open links; press Escape; Tab while closed; resize to laptop and back. Repeat in both themes. | Menu state matches aria-expanded; Escape closes and returns focus; closed links are skipped; desktop navigation remains usable. | Not run |
+| L18 | Project filters | On Projects, select Individual work, Team work, then All projects using mouse and keyboard in both themes. Inspect pressed states and status text. | Individual shows Over Under; Team shows High Stakes; All shows both; one pressed button; status reports 1, 1, then 2 projects. | Not run |
+| L19 | Theme selection and persistence | On Home toggle with mouse, Enter, and Space. Visit all five pages and reload. With no saved choice, change device preference using DevTools rendering emulation; then select a theme and change device preference again. | Theme button only on Home; pressed state matches dark mode; saved selection applies sitewide; device preference used until explicit selection. | Not run |
+| L20 | No JavaScript and unavailable storage | Disable JavaScript in DevTools and reload each page; restore it afterward. Separately test where browser storage is unavailable if possible. | Without JS all navigation and both projects remain available in light mode; controls needing JS hidden. Blocked storage does not break the current-page toggle or other features. | Not run |
+| L21 | Images, alt text, and public content | On live Projects inspect both photos and their alt attributes in DevTools; check transferred image sizes in Network. Review project and contact links if present. | Both images load, have descriptive alt, and are each below 500 KB. No project destination or mailto link is invented; current projects have no external links and Contact is plain text. | Not run |
+| L22 | Console and assets | Open each live page with DevTools Console and Network; reload and exercise menu, theme, and filters. | No site JavaScript exceptions or failed local asset requests. | Not run |
+| L23 | Home Lighthouse | On live index.html run DevTools Lighthouse Navigation, Accessibility and Best Practices, Mobile then Desktop, in both themes. Save reports and record each score. | Accessibility at least 90 in every run; review Best Practices findings. | Not run - no measured scores |
+| L24 | About Lighthouse | Repeat L23 on live about.html. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
+| L25 | Projects Lighthouse | Repeat L23 on live projects.html with All projects selected. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
+| L26 | Skills Lighthouse | Repeat L23 on live skills.html. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
+| L27 | Contact Lighthouse | Repeat L23 on live contact.html. | Accessibility at least 90 in every run; record actual Best Practices scores. | Not run - no measured scores |
+| L28 | Contrast and focus | Inspect normal/hover text, selected filters, buttons, and focus outlines in both themes using DevTools color contrast information; keyboard-focus each control. | Normal text at least 4.5:1; large text and focus indicators at least 3:1 against adjacent backgrounds; focus remains visible. | Not run in browser; earlier calculated palette results preserved below. |
+
+### Execution and retest log
+
+Append one row per executed test/configuration, including separate Lighthouse scores for each page, viewport, and theme. Keep failed rows when adding retests. The table below is intentionally empty until browser testing is executed.
+
+| Date | Test ID | Full URL | Chrome version | Viewport / theme | Pass or Fail | Evidence / scores / issue and fix | Retest reference |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+## Historical test plans and verification
+
+The dated entries below are preserved as history. Statements about missing pages or features describe those earlier versions; use the current plan above for the present site.
+
 ## Current verification
 
 2026-10-19: Home page created. Browser, direct-file, VS Code Live Preview, keyboard, and Lighthouse checks have not been executed. The remaining four pages and interactive features are not implemented. Live deployment has not been verified; no live URL or measured accessibility scores are recorded yet.
