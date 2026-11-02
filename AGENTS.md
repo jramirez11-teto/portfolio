@@ -101,4 +101,6 @@ When requested, help prepare the assignment's 1–2 page report with repository 
 
 Show the theme button only on Home; apply the saved theme across all five pages.
 
+2026-11-02: Use an icon-only theme button: a crescent moon in light mode and a sun with outward rays, sunglasses, and a smile in dark mode, based on the owner's references. Preserve an accessible name and visible keyboard focus.
+
 2026-10-26: Add a light/dark toggle on phone and desktop. Preserve the existing light palette. Dark mode uses navy background #0F172A, slate surfaces #1E293B, off-white text #F8FAFC, secondary text #CBD5E1, green links/focus #86EFAC, hover green #BBF7D0, and highlights #143326. Follow the device preference until the visitor selects a theme; remember the choice when browser storage is available.

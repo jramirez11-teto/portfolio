@@ -1,5 +1,15 @@
 # Portfolio testing
 
+## Theme icon update - 2026-11-02
+
+Home now uses decorative inline SVG icons: a crescent in light mode and a sun with rays, sunglasses, and a smile in dark mode. The native 48px button retains its Dark mode accessible name, pressed state, and focus outline. Its tooltip describes the next action. Theme storage and navigation behavior are unchanged.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| I01 | Script syntax and diff whitespace | Run node --check js/main.js and git diff --check. | Both commands succeed. | 2026-11-02: whitespace check Pass; script syntax Not run because node is not on PATH. |
+| I02 | Local icon and keyboard behavior | Open index.html directly at 390x844 and 1440x900; use Tab/Shift+Tab, Enter and Space on the theme button; inspect both themes and reload. | Moon in light mode; sun in dark mode; visible focus; correct pressed state and tooltip; no overflow. | Not run - browser access host unavailable; native Chrome attempt was stopped by Computer Use because it could not confidently determine the current browser URL. |
+| I03 | Console, preview, and live audit | Check Console locally, repeat in VS Code Live Preview when available, then test approved deployment and rerun Home Lighthouse. | No console errors; correct icons in both themes; Accessibility at least 90. | Not run - browser testing blocked as above; update not pushed. Earlier Lighthouse scores do not cover this change. |
+
 ## Current live-site test plan - 2026-10-29
 
 Target: https://jramirez11-teto.github.io/portfolio/

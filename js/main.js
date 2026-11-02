@@ -14,7 +14,10 @@ function initializeTheme() {
 
   function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
-    if (themeButton) themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
+    if (themeButton) {
+      themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
+      themeButton.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    }
   }
 
   applyTheme(savedTheme || (deviceTheme.matches ? 'dark' : 'light'));
