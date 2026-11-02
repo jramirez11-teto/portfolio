@@ -1,5 +1,15 @@
 # Portfolio testing
 
+## Home layout stability correction - 2026-11-02
+
+Owner reported Home CLS 0.192, with svg identified in the report. This is the original measured result; the full report and test configuration were not supplied. Added a permanent 48x48 CSS-pixel wrapper around the initially hidden theme button, explicit 32x32 SVG dimensions, and matching fixed CSS icon sizes in both themes. This reserves the same header space before and after theme initialization. Updated the shared stylesheet version on all pages. No-JavaScript keeps the button hidden with its reserved space empty.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| S01 | Reserved theme space and icon dimensions | Inspect Home wrapper, both SVG dimensions, shared CSS dimensions, and all five stylesheet URLs; run git diff --check. | Fixed space independent of button hidden state; matching icon sizes; consistent version; clean whitespace. | Pass - 2026-11-02, PowerShell source assertions and diff review. This is not a measured layout test. |
+| S02 | Layout and keyboard retest | Open Home directly and through Live Preview if available at 390x844 and 1440x900; reload with JS enabled/disabled; test both themes, Tab/Shift+Tab, Enter/Space, menu and Console. | Theme initialization does not move surrounding header content; icons fit; no overflow or errors; controls remain keyboard usable. | Not run - earlier browser access host and native Chrome URL verification were blocked; no new browser result claimed. |
+| S03 | Live CLS retest | After approved deployment, rerun the original live Home audit on mobile/desktop; record CLS and Agentic Browsing results. | CLS at most 0.1; inspect any remaining shift sources, including mobile navigation initialization. | Not run - update awaits review and push. Original CLS 0.192 preserved above; no improved score claimed. |
+
 ## Chrome theme icon display correction - 2026-11-02
 
 Owner supplied a Chrome screenshot showing both theme symbols tiny inside a tall button, while reporting the design displayed correctly in another browser. This is consistent with new HTML using a cached stylesheet without the icon rules; the cache cause has not been confirmed in Chrome DevTools. Added the same stylesheet version query to all five pages so browsers request the updated CSS. The relative file path remains unchanged.
