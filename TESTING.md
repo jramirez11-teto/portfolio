@@ -1,5 +1,14 @@
 # Portfolio testing
 
+## Projects filter layout stability - 2026-11-02
+
+Owner reported mobile Projects Performance 89 and CLS as the issue. Exact CLS, audit configuration, and shifting elements were not supplied. Source review found filter buttons initially removed from layout by hidden, then revealed by deferred JavaScript. Reserved their naturally wrapping rows with visibility:hidden while initialization is pending; controls remain invisible and unfocusable. All project cards remain available without JavaScript, with empty space reserved for the unavailable filters. Reserved one line for filter status and made all filter labels bold to avoid width changes when selection changes. Updated stylesheet URLs on all five pages.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| P01 | Filter loading styles | Check hidden filter rule retains flex layout with visibility:hidden, stable font weight, status line reservation, and consistent stylesheet URLs; run git diff --check. | Layout space reserved before initialization; other hidden elements still use display:none; clean whitespace. | Pass - 2026-11-02, source checks and diff review; not a browser layout measurement. |
+| P02 | Projects browser and performance retest | Open projects.html directly and via Live Preview if available at 390x844 and 1440x900; reload with/without JS; check keyboard focus, all filter states, both themes, console and overflow. After approved deployment rerun mobile PageSpeed, record CLS and Performance, and inspect remaining shift sources including mobile menu initialization. | Filter initialization does not move cards; hidden filters cannot receive focus; all cards accessible without JS; Performance at least 90 and CLS at most 0.1. | Not run - browser inventory retry returned browser access host unavailable. No new performance score or CLS measured. Original owner-reported Performance 89 preserved above. |
+
 ## Theme control on every page - 2026-11-02
 
 Owner requested the theme button on all five pages, superseding all Home-only expectations below (including L19). Copied Home's accessible button, decorative icons, and reserved space into the other four headers. Existing shared theme logic handles each page without script changes.

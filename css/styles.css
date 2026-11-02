@@ -70,6 +70,10 @@ button:hover { color: var(--green-hover); border-color: var(--green-hover); back
 :root[data-theme="dark"] .theme-icon-moon { display: none; }
 :root[data-theme="dark"] .theme-icon-sun { display: block; }
 .project-filters { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+/* Keep the filter rows in the layout while their controls initialize. */
+.project-filters[hidden] { display: flex !important; visibility: hidden; }
+.project-filters button { font-weight: 700; }
+#filter-status { min-height: 1.65em; }
 .project-filters button[aria-pressed="true"] { color: var(--button-text); background: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; }
 .project-filters button[aria-pressed="true"]:hover { background: var(--green-hover); }
 @media (max-width: 47.999rem) {
