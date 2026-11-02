@@ -1,5 +1,14 @@
 # Portfolio testing
 
+## Chrome theme icon display correction - 2026-11-02
+
+Owner supplied a Chrome screenshot showing both theme symbols tiny inside a tall button, while reporting the design displayed correctly in another browser. This is consistent with new HTML using a cached stylesheet without the icon rules; the cache cause has not been confirmed in Chrome DevTools. Added the same stylesheet version query to all five pages so browsers request the updated CSS. The relative file path remains unchanged.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| C01 | Stylesheet references | Inspect all five HTML stylesheet links and verify the local stylesheet exists; run git diff --check. | Same versioned relative stylesheet URL on every page; no whitespace errors. | Pass - 2026-11-02, PowerShell source checks and git diff --check. |
+| C02 | Chrome rendering retest | After deployment reload Home in Chrome at phone/laptop widths; toggle with Enter/Space; check both themes, console, and direct-file opening. | One correctly sized icon per theme, visible focus, no errors or overflow. | Not run - earlier browser access was blocked; fix awaits owner review and deployment. Original owner-reported visual failure preserved above. |
+
 ## Theme icon update - 2026-11-02
 
 Home now uses decorative inline SVG icons: a crescent in light mode and a sun with rays, sunglasses, and a smile in dark mode. The native 48px button retains its Dark mode accessible name, pressed state, and focus outline. Its tooltip describes the next action. Theme storage and navigation behavior are unchanged.
