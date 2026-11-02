@@ -1,5 +1,14 @@
 # Portfolio testing
 
+## Theme control on every page - 2026-11-02
+
+Owner requested the theme button on all five pages, superseding all Home-only expectations below (including L19). Copied Home's accessible button, decorative icons, and reserved space into the other four headers. Existing shared theme logic handles each page without script changes.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| A01 | Consistent theme controls | Compare each page's theme block with Home; check one button and one wrapper per page, accessible label, both icon dimensions, and deferred shared script; run git diff --check. | All five use identical theme markup and shared behavior; clean whitespace. | Pass - 2026-11-02, PowerShell source checks. |
+| A02 | Theme behavior and responsive keyboard checks | On each page directly and in Live Preview if available at 390x844 and 1440x900, toggle with click/Enter/Space; check focus with Tab/Shift+Tab; navigate and reload; test both themes, blocked storage, JS disabled, mobile menu, and Console. Repeat on the live site after approved deployment and record Lighthouse results. | Each page offers a working accessible theme button; saved choice follows navigation when storage is available; no overflow or errors; JS-disabled controls hidden. | Not run - earlier browser access was blocked; source checks do not establish browser behavior. Update awaits review and push. |
+
 ## Home layout stability correction - 2026-11-02
 
 Owner reported Home CLS 0.192, with svg identified in the report. This is the original measured result; the full report and test configuration were not supplied. Added a permanent 48x48 CSS-pixel wrapper around the initially hidden theme button, explicit 32x32 SVG dimensions, and matching fixed CSS icon sizes in both themes. This reserves the same header space before and after theme initialization. Updated the shared stylesheet version on all pages. No-JavaScript keeps the button hidden with its reserved space empty.

@@ -99,7 +99,7 @@ When requested, help prepare the assignment's 1–2 page report with repository 
 
 ## Owner-approved theme addition
 
-Show the theme button only on Home; apply the saved theme across all five pages.
+2026-11-02: Show the theme button on all five pages on phone and desktop; apply the saved theme across all five pages. This supersedes the earlier Home-only preference. Reserve the same button space on each page to reduce layout shifts.
 
 2026-11-02: Use an icon-only theme button: a crescent moon in light mode and a sun with outward rays, sunglasses, and a smile in dark mode, based on the owner's references. Preserve an accessible name and visible keyboard focus.
 
