@@ -59,13 +59,12 @@ h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
 .interests ul { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin: 0; padding-left: 1.25rem; color: var(--secondary); }
 .site-footer { border-top: 1px solid var(--border); color: var(--secondary); font-size: 0.9rem; padding-block: 1rem; }
 .skill-section { margin-top: 2rem; }
-/* Keep tool images aligned on the left with room between each row. */
-.tool-list { list-style: none; padding: 0; margin: 2rem 0; display: grid; gap: 2.5rem; }
-.tool-list li { display: grid; grid-template-columns: minmax(0, 7rem) minmax(0, 1fr); align-items: center; gap: 1.25rem; }
-.tool-list img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 0.5rem; }
-@media (min-width: 48rem) {
-  .tool-list { gap: 3rem; }
-  .tool-list li { grid-template-columns: 12rem minmax(0, 1fr); gap: 2rem; }
+/* The text stays together; tool images form a separate column on the right. */
+.tool-images { display: grid; align-content: start; gap: 3rem; width: min(100%, 19rem); margin-left: auto; justify-self: end; padding-bottom: 3rem; }
+.tool-images img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 0.5rem; }
+@media (min-width: 64rem) {
+  .skills-layout { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; gap: 4rem; align-items: start; }
+  .tool-images { padding-top: clamp(3rem, 9vw, 7rem); }
 }
 .contact-email { overflow-wrap: anywhere; }
 button { font: inherit; cursor: pointer; padding: 0.5rem 1rem; color: var(--green); background: var(--surface); border: 2px solid var(--green); border-radius: 0.35rem; }
