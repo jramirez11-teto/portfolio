@@ -232,3 +232,13 @@ Replaced the short interest list with four native details/summary disclosures in
 | B01 | Interest content and assets | Inspect all supplied images and markup; count disclosures/images/h1; resolve relative targets and check asset sizes; inspect diff and run git diff --check. | Four topics in requested order; 12 matching images with alt/dimensions; all displayed assets below 500 KB; one h1; existing local targets and clean whitespace. | Pass - 2026-11-05, visual asset inspection and PowerShell source/metadata checks. |
 | B02 | Disclosures, keyboard and responsive layout | Open About directly and in Live Preview if available at 390x844 and 1440x900, both themes. Tab/Shift+Tab through each summary; toggle with Enter/Space; open multiple panels, close each, disable JS, inspect images, overflow, navigation and console. | Each panel independently opens/closes; clear focus/marker; content available without JS; images fit and no overflow or console errors. | Not run - browser availability retry reported browser access host unavailable; native UI tests not performed. |
 | B03 | Live About and accessibility | After approved push, repeat B02 on live About and run full live test plan, recording Lighthouse Accessibility. | All assets load under /portfolio/ and disclosures work; measured Accessibility at least 90. | Not run - awaiting owner review and push approval; no new Lighthouse scores measured. |
+
+
+## Music display names - 2026-11-05
+
+Updated Music text, captions and alt text from Miku/Teto to Hatsune Miku/Kasane Teto. Asset filenames remain unchanged.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| N01 | Artist names | Inspect About diff and search music text, captions and alt; run git diff --check. | Full names in all six occurrences; clean whitespace. | Pass - 2026-11-05, source review. |
+| N02 | Browser and live names | Open Music at phone/laptop sizes and verify names fit; after approved push repeat live. | Full names readable with no overflow. | Not run - browser access unavailable in this session; live update awaits push approval. |
