@@ -189,3 +189,11 @@ Added the owner-provided individual Onshape course project and credited guidance
 | U03 | Screenshot and deployment checks | Add supplied screenshot under 500 KB with descriptive alt text; after approved push repeat the live test plan and Projects Lighthouse audit. | Screenshot loads and fits both widths; live filters and accessibility verified with measured scores. | Not run - awaiting local screenshot and owner approval before push; no new Lighthouse scores measured. |
 
 Current L18 expectations are now Individual: Over Under and Pulley (2), Team: High Stakes (1), All: three projects (3). L20/L21 should cover three projects once the pulley screenshot is added; earlier entries are preserved as history.
+### Pulley screenshot completion - 2026-11-05
+
+Owner supplied the local screenshot path. Copied it unchanged to images/pulley-onshape.png (228,826 bytes, 1279 x 589). Added descriptive alt text and intrinsic dimensions; existing shared responsive image CSS applies. README now describes the included screenshot. This resolves the missing-image limitation recorded above.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| U04 | Screenshot asset and markup | Read image dimensions; check file size, relative targets, three cards/images, alt text and dimensions; inspect diff and run git diff --check. | Screenshot below 500 KB; correct dimensions; descriptive alt; no missing local targets or whitespace errors. | Pass - 2026-11-05, PowerShell image metadata and source checks. Screenshot is 228,826 bytes and 1279 x 589. |
+| U05 | Screenshot browser retest | Run U02 at phone/laptop sizes, directly and via Live Preview if available, then repeat on live site after approved deployment and measure Projects Lighthouse. | Image fits without distortion/overflow; filters show 2 individual, 1 team and 3 total; keyboard and console checks pass. | Not run - browser access host was unavailable during this task; native UI tests not performed. Live deployment awaits push approval. No new Lighthouse score measured. |

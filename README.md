@@ -8,7 +8,7 @@ Double-click `index.html` to open the Home page in a browser. No installation or
 
 ## Progress
 
-The Home page introduces Joel and his interests using a restrained green palette. The About Me page covers his education and interests. The Projects page presents his Over Under robot and High Stakes intake mechanism with owner-provided photos, plus an individual Onshape pulley model from his Intro to Engineering Design college course. The pulley project credits guidance from Getting Started with Onshape, Fifth Edition; its screenshot still needs to be added. The Skills page covers teamwork, hands-on problem solving, and workshop tools. Contact displays the owner's approved email text exactly as supplied. All five pages share navigation and styling.
+The Home page introduces Joel and his interests using a restrained green palette. The About Me page covers his education and interests. The Projects page presents his Over Under robot and High Stakes intake mechanism with owner-provided photos, plus an individual Onshape pulley model from his Intro to Engineering Design college course. The pulley project credits guidance from Getting Started with Onshape, Fifth Edition and includes an owner-provided screenshot of the model. The Skills page covers teamwork, hands-on problem solving, and workshop tools. Contact displays the owner's approved email text exactly as supplied. All five pages share navigation and styling.
 
 JavaScript adds a mobile Menu button below 48rem, with Escape to close and navigation that adjusts on resize. The Projects page has All projects, Individual work, and Team work filters. Without JavaScript, navigation and all project cards remain visible. These features use the shared deferred script without dependencies.
 
