@@ -214,3 +214,11 @@ Owner revised the layout: restored the original plain bullet list and moved the 
 | --- | --- | --- | --- | --- |
 | R01 | Separate image column source | Inspect plain list, image container, image order/alt/dimensions, responsive CSS and local targets; run git diff --check. | Original list restored; three larger images separate from labels; existing local assets and clean whitespace. | Pass - 2026-11-05, PowerShell source checks and diff inspection. |
 | R02 | Responsive visual and keyboard retest | Open Skills directly and in Live Preview at 390x844 and 1440x900, both themes; inspect sizing, spacing, overflow and keyboard navigation; check console. After approved deployment repeat live and run Lighthouse. | Wide screens show larger right image stack; phones show images below text without overflow; keyboard/navigation unchanged and no console errors; measured Accessibility at least 90. | Not run - browser access host unavailable in this session; no native UI tests or new Lighthouse measurements. Live retest awaits approved push. |
+## Skills image size adjustment - 2026-11-05
+
+Reduced the tool image maximum width and wide-screen image column from 22rem (352px) to 19rem (304px), about 14 percent smaller. Existing order, right alignment, 3rem vertical gaps, alt text and intrinsic image dimensions are preserved. Updated shared stylesheet version on all pages.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| Z01 | Image sizing source | Inspect CSS width/column values, unchanged markup/order and consistent stylesheet versions; run git diff --check. | Both maximum image width and desktop column use 19rem; image proportions remain automatic; clean diff. | Pass - 2026-11-05, source checks and diff review. |
+| Z02 | Responsive image size retest | Open Skills directly and through Live Preview at 390x844 and 1440x900 in both themes; inspect image size, order, overflow, keyboard and console. Repeat live after approved deployment. | Images slightly smaller, still readable and right-aligned; no overflow or interaction regressions. | Not run - browser access host unavailable in this session; native UI tests not performed. Live test awaits approved push. |
