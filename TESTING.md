@@ -177,3 +177,15 @@ Static and whitespace checks are recorded below after execution. Full live-site 
 Theme static verification: Pass, all five pages have exactly one theme control and one h1. Git diff whitespace check passed.
 
 Home-only theme revision, 2026-10-26: Owner requested one theme button on Home with the saved choice applied across all pages. Moved theme initialization outside the button guard. Node VM mock DOM checks: Pass for dark/light selection on Home, shared choice on all four button-free pages, and blocked storage. Actual browser navigation/persistence, phone/laptop, keyboard, console and Lighthouse checks remain Not run. Previous all-page button expectations in T22 are superseded: test the control on Home and the resulting theme on every page.
+
+## Pulley project addition - 2026-11-05
+
+Added the owner-provided individual Onshape course project and credited guidance from Getting Started with Onshape, Fifth Edition. The screenshot is visible in chat but not available as a local asset; the card is incomplete until that image is supplied. No project URL was provided.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| U01 | Project source and local assets | Count card categories and h1; resolve local href/src targets; inspect diff and run git diff --check. | Three cards: two individual and one team; one h1; existing local targets; clean diff. | Pass - 2026-11-05, PowerShell source checks and diff review. Image for new card remains missing. |
+| U02 | Pulley layout, filtering, keyboard and console | Open projects.html directly and in Live Preview if available at 390x844 and 1440x900 in both themes. Use Tab/Shift+Tab and Enter/Space on filters; inspect console; disable JS. | Individual shows Over Under and Pulley (2); Team shows High Stakes (1); All restores 3; all cards available without JS; no overflow or errors. | Not run - browser inventory reported browser access host unavailable; native UI testing not performed. |
+| U03 | Screenshot and deployment checks | Add supplied screenshot under 500 KB with descriptive alt text; after approved push repeat the live test plan and Projects Lighthouse audit. | Screenshot loads and fits both widths; live filters and accessibility verified with measured scores. | Not run - awaiting local screenshot and owner approval before push; no new Lighthouse scores measured. |
+
+Current L18 expectations are now Individual: Over Under and Pulley (2), Team: High Stakes (1), All: three projects (3). L20/L21 should cover three projects once the pulley screenshot is added; earlier entries are preserved as history.
