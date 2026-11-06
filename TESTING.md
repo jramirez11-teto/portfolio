@@ -242,3 +242,6 @@ Updated Music text, captions and alt text from Miku/Teto to Hatsune Miku/Kasane 
 | --- | --- | --- | --- | --- |
 | N01 | Artist names | Inspect About diff and search music text, captions and alt; run git diff --check. | Full names in all six occurrences; clean whitespace. | Pass - 2026-11-05, source review. |
 | N02 | Browser and live names | Open Music at phone/laptop sizes and verify names fit; after approved push repeat live. | Full names readable with no overflow. | Not run - browser access unavailable in this session; live update awaits push approval. |
+
+
+Music wording follow-up - 2026-11-05: Added "songs" after the artist list at the owner's request. Source diff and git diff --check passed. Browser checks remain Not run; owner approved pushing the name and wording updates together.
