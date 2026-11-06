@@ -245,3 +245,13 @@ Updated Music text, captions and alt text from Miku/Teto to Hatsune Miku/Kasane 
 
 
 Music wording follow-up - 2026-11-05: Added "songs" after the artist list at the owner's request. Source diff and git diff --check passed. Browser checks remain Not run; owner approved pushing the name and wording updates together.
+
+
+## Home NJIT logo - 2026-11-05
+
+Added the owner-supplied NJIT Highlanders logo to the right of the Home introduction at widths of 64rem or more, capped at 19rem. On narrower screens it follows the text and remains right-aligned. Intrinsic dimensions and height:auto preserve proportions. No JavaScript or palette changes.
+
+| ID | What is tested | Steps | Expected result | Actual result |
+| --- | --- | --- | --- | --- |
+| H01 | Logo source and asset | Inspect image, dimensions, alt, responsive CSS and local paths; inspect diff and run git diff --check. | Correct logo below 500 KB, relative path and dimensions; scoped Home layout and clean whitespace. | Pass - 2026-11-05, asset inspection and PowerShell metadata/source checks; logo 127,005 bytes, 321 x 297. |
+| H02 | Home responsive and keyboard retest | Open Home directly and via Live Preview at 390x844 and 1440x900 in both themes; inspect logo size, placement, proportions, overflow, keyboard focus and console. Repeat live after approved push, including Lighthouse. | Logo on right on wide screens, below text on phones; no distortion/overflow or interaction errors; record measured scores. | Not run - browser access unavailable in this session; live retest awaits approval and deployment; no new Lighthouse scores. |
